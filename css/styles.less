@@ -530,7 +530,7 @@ div.top-bar {
 			font-family: @jean-luc;
 			float: left;
 			height: 100%;
-			font-weight: bold;
+			//font-weight: bold;
 			text-transform: uppercase;
 			font-size: 1.2em;
 			
@@ -547,32 +547,39 @@ div.top-bar {
 					a {
 						text-decoration: none;
 						display: block;
-						padding: 20px 15px;
-						color: @light-grey;
+						padding: 20px 5px;
+						color: @orange;
 						//background-image: url(@{stylesheet_directory_url}/images/current-menu-item.png);
 						background-position: center 55px;
 						background-repeat: no-repeat;
 						.transition( .3s all );
 						&:hover {
-						
 							background-position: center 42px;
-							color: @blue;
-						
+							color: @light-grey;
 						}
 					}
-					
 				}
 				
+        li.menu-item-type-disabled {
+          float: inherit;
+          cursor: default;
+          
+          a {
+            color: black;
+            &:hover {
+              color: black;
+            }
+          }
+        }
+        
 				li.current_page_item,
 				li.current-menu-item {
-				
 					a {
-					
-						color: @blue;
+            font-weight: bold;
+            text-shadow: 0 0 10px @light-grey;
+						color: @light-grey;
 						background-position: center 35px;
-					
 					}
-				
 				}
 			}
 		}
@@ -585,7 +592,6 @@ div.top-bar {
 			color: white;
 			background-color: black;
 		}
-	
 	}
 	
 	div#nav-user-badge {

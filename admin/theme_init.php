@@ -82,14 +82,63 @@ function the_reality_theme_setup()
 		// Setup Reality Pages
 		
 		$default_pages = array(
-			'about'		=>	array(
+			'profile'		    =>	array(
+				'post_content'	=>	'<h1>Profile stub</h1>',
+				'post_name'		=>	'profile',
+				'post_title'	=>	'Profile',
+				'post_status'	=>	'publish',
+				'post_type'		=>	'page'
+				),
+            'feed'		        =>	array(
+				'post_content'	=>	'<h1>Feed stub</h1>',
+				'post_name'		=>	'feed',
+				'post_title'	=>	'Feed',
+				'post_status'	=>	'publish',
+				'post_type'		=>	'page'
+				),
+            'members'	    	=>	array(
+				'post_content'	=>	'<h1>Members stub</h1>',
+				'post_name'		=>	'members',
+				'post_title'	=>	'Members',
+				'post_status'	=>	'publish',
+				'post_type'		=>	'page'
+				),
+            'cardlookup'		=>	array(
+				'post_content'	=>	'<h1>Card Lookup Stub</h1>',
+				'post_name'		=>	'cardlookup',
+				'post_title'	=>	'Card Lookup',
+				'post_status'	=>	'publish',
+				'post_type'		=>	'page'
+				),
+            'dealarchive'		=>	array(
+				'post_content'	=>	'<h1>Deal Archive stub</h1>',
+				'post_name'		=>	'dealarchive',
+				'post_title'	=>	'Deal Archive',
+				'post_status'	=>	'publish',
+				'post_type'		=>	'page'
+				),
+			'leaderboards'	    =>	array(
+				'post_content'	=>	'<h2>Weekly Leaderboard</h2>[reality_leaderboard type="weekly"]<h2>TOTAL POINTS</h2>[reality_leaderboard]<h2>BIGGEST DEALS</h2>[reality_leaderboard type="biggest_deals"]<h2>MOST DEALS MADE</h2>[reality_leaderboard type="most_deals"]',
+				'post_name'		=>	'leaderboards',
+				'post_title'	=>	'Leaderboards',
+				'post_status'	=>	'publish',
+				'post_type'		=>	'page'
+				),
+            'about'		        =>	array(
 				'post_content'	=>	'<h1>Insert Your About Content Here</h1>',
 				'post_name'		=>	'about',
 				'post_title'	=>	'About',
 				'post_status'	=>	'publish',
 				'post_type'		=>	'page'
 				),
-			'submit'	=>	array(
+            'photoblog'	    	=>	array(
+				'post_content'	=>	'<h1>Photoblog stub</h1>',
+				'post_name'		=>	'photoblog',
+				'post_title'	=>	'Photoblog',
+				'post_status'	=>	'publish',
+				'post_type'		=>	'page'
+				),
+            'submit'	        =>	array(
 				'post_content'	=>	'<p style="text-align: center;">If there are additional materials that you feel you need to submit, mention them in the "Notes" before submitting your Deal.
 Some types of challenges will require you to submit a .zip archive. Creating a .zip is super easy. Click for tips on doing it on a <a title="Zip for MAC" href="http://docs.info.apple.com/article.html?path=Mac/10.6/en/8726.html" target="_blank">Mac</a> or a <a title="Zip for Windows" href="http://windows.microsoft.com/en-US/windows-vista/Compress-and-uncompress-files-zip-files" target="_blank">PC</a>.
 If you want to make changes to a submission after you have submitted it, please resubmit: we will use the most recent version.</p>',
@@ -102,14 +151,7 @@ If you want to make changes to a submission after you have submitted it, please 
 					'REALITY_success_message'	=>	'<h2>You Have Successfully Submitted a Deal!</h2>'
 					)
 				),
-			'leaderboards'	=>	array(
-				'post_content'	=>	'<h2>Weekly Leaderboard</h2>[reality_leaderboard type="weekly"]<h2>TOTAL POINTS</h2>[reality_leaderboard]<h2>BIGGEST DEALS</h2>[reality_leaderboard type="biggest_deals"]<h2>MOST DEALS MADE</h2>[reality_leaderboard type="most_deals"]',
-				'post_name'		=>	'leaderboards',
-				'post_title'	=>	'Leaderboards',
-				'post_status'	=>	'publish',
-				'post_type'		=>	'page'
-				),
-			'login'			=>	array(
+            'login'             =>	array(
 				'post_name'		=>	'login',
 				'post_title'	=>	'Login',
 				'post_status'	=>	'publish',
@@ -120,10 +162,12 @@ If you want to make changes to a submission after you have submitted it, please 
 				)
 		);
 		
+        $post_id = array();
+        
 		foreach( $default_pages as $key => $page ) {
 		
 			if ( $id = wp_insert_post( $page ) ) {
-			
+                $post_id[ $key ] = $id;
 				if ( $key == 'about' ) $aboutID = $id;
 				if ( $key == 'leaderboards' ) $leaderboardsID = $id;
 			
@@ -134,11 +178,8 @@ If you want to make changes to a submission after you have submitted it, please 
 						update_post_meta( $id, $meta_key, $meta_value );
 					
 					}
-				
 				}
-			
 			}
-		
 		}
 		
 		// Setup Card Type Categories
@@ -340,7 +381,7 @@ If you want to make changes to a submission after you have submitted it, please 
 							'menu-item-type'		=>	'post_type',
 							'menu-item-title'		=>	'About',
 							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$aboutID,
+							'menu-item-object-id'	=>	$post_id['about'],
 							'menu-item-status'		=>	'publish'
 							)
 						),
@@ -348,45 +389,88 @@ If you want to make changes to a submission after you have submitted it, please 
 					),
 			'Logged Out Menu'	=>	array(
 					'menu-items'	=>	array(
-						'about'	=>	array(
-							'menu-item-type'		=>	'post_type',
-							'menu-item-title'		=>	'About',
+                        'profile'	=>	array(
+							'menu-item-type'		=>	'disabled',
+							'menu-item-title'		=>	'Profile',
 							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$aboutID,
+							'menu-item-object-id'	=>	$post_id['profile'],
+							'menu-item-status'		=>	'publish'
+							), 
+						'feed'	=>	array(
+							'menu-item-type'		=>	'disabled',
+							'menu-item-title'		=>	'Feed',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$bp_pages['activity'],
+							'menu-item-status'		=>	'publish'
+							), 
+						'members'	=>	array(
+							'menu-item-type'		=>	'disabled',
+							'menu-item-title'		=>	'Members',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$bp_pages['members'],
 							'menu-item-status'		=>	'publish'
 							),
-						'deal_archive'	=>	array(
-							'menu-item-type'		=>	'custom',
+                        'cardlookup'	=>	array(
+							'menu-item-type'		=>	'disabled',
+							'menu-item-title'		=>	'Card Lookup',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['cardlookup'],
+							'menu-item-status'		=>	'publish'
+							),
+                        'dealarchive'	=>	array(
+							'menu-item-type'		=>	'disabled',
 							'menu-item-title'		=>	'Deal Archive',
-							'menu-item-url'			=>	site_url().'/deals/',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['dealarchive'],
 							'menu-item-status'		=>	'publish'
 							),
 						'leaderboards'	=>	array(
-							'menu-item-type'		=>	'post_type',
-							'menu-item-title'		=>	'Leaderboards',
+							'menu-item-type'		=>	'disabled',
+							'menu-item-title'		=>	'Leaderboard',
 							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$leaderboardsID,
+							'menu-item-object-id'	=>	$post_id['leaderboards'],
 							'menu-item-status'		=>	'publish'
-							)
+							),
+                        'about'	=>	array(
+							'menu-item-type'		=>	'post_type',
+							'menu-item-title'		=>	'About',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['about'],
+							'menu-item-status'		=>	'publish'
+							),
+                        'photoblog'	=>	array(
+							'menu-item-type'		=>	'disabled',
+							'menu-item-title'		=>	'Photoblog',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['photoblog'],
+							'menu-item-status'		=>	'publish'
+							),
+                        'submit'	=>	array(
+							'menu-item-type'		=>	'disabled',
+							'menu-item-title'		=>	'Submit',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['submit'],
+							'menu-item-status'		=>	'publish'
+							),
 						),
 					'location'	=>	'logged_out_menu'	
 					),		
 			'Main Menu'			=>	array(
 				'menu-items'	=>	array(
-						'bullpen'	=>	array(
+                        'profile'	=>	array(
 							'menu-item-type'		=>	'post_type',
-							'menu-item-title'		=>	'Bullpen',
+							'menu-item-title'		=>	'Profile',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['profile'],
+							'menu-item-status'		=>	'publish'
+							), 
+						'feed'	=>	array(
+							'menu-item-type'		=>	'post_type',
+							'menu-item-title'		=>	'Feed',
 							'menu-item-object'		=>	'page',
 							'menu-item-object-id'	=>	$bp_pages['activity'],
 							'menu-item-status'		=>	'publish'
-							),
-						'about'	=>	array(
-							'menu-item-type'		=>	'post_type',
-							'menu-item-title'		=>	'About',
-							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$aboutID,
-							'menu-item-status'		=>	'publish'
-							),
+							), 
 						'members'	=>	array(
 							'menu-item-type'		=>	'post_type',
 							'menu-item-title'		=>	'Members',
@@ -394,19 +478,48 @@ If you want to make changes to a submission after you have submitted it, please 
 							'menu-item-object-id'	=>	$bp_pages['members'],
 							'menu-item-status'		=>	'publish'
 							),
-						'deal_archive'	=>	array(
-							'menu-item-type'		=>	'custom',
+                        'cardlookup'	=>	array(
+							'menu-item-type'		=>	'post_type',
+							'menu-item-title'		=>	'Card Lookup',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['cardlookup'],
+							'menu-item-status'		=>	'publish'
+							),
+                        'dealarchive'	=>	array(
+							'menu-item-type'		=>	'post_type',
 							'menu-item-title'		=>	'Deal Archive',
-							'menu-item-url'			=>	site_url( 'deals' ),
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['dealarchive'],
 							'menu-item-status'		=>	'publish'
 							),
 						'leaderboards'	=>	array(
 							'menu-item-type'		=>	'post_type',
-							'menu-item-title'		=>	'Leaderboards',
+							'menu-item-title'		=>	'Leaderboard',
 							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$leaderboardsID,
+							'menu-item-object-id'	=>	$post_id['leaderboards'],
 							'menu-item-status'		=>	'publish'
-							)
+							),
+                        'about'	=>	array(
+							'menu-item-type'		=>	'post_type',
+							'menu-item-title'		=>	'About',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['about'],
+							'menu-item-status'		=>	'publish'
+							),
+                        'photoblog'	=>	array(
+							'menu-item-type'		=>	'post_type',
+							'menu-item-title'		=>	'Photoblog',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['photoblog'],
+							'menu-item-status'		=>	'publish'
+							),
+                        'submit'	=>	array(
+							'menu-item-type'		=>	'post_type',
+							'menu-item-title'		=>	'Submit',
+							'menu-item-object'		=>	'page',
+							'menu-item-object-id'	=>	$post_id['submit'],
+							'menu-item-status'		=>	'publish'
+							),
 						),
 					'location'	=>	'primary'
 				)

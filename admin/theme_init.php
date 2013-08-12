@@ -96,13 +96,6 @@ function the_reality_theme_setup()
 				'post_status'	=>	'publish',
 				'post_type'		=>	'page'
 				),
-            'members'	    	=>	array(
-				'post_content'	=>	'<h1>Members stub</h1>',
-				'post_name'		=>	'members',
-				'post_title'	=>	'Members',
-				'post_status'	=>	'publish',
-				'post_type'		=>	'page'
-				),
             'cardlookup'		=>	array(
 				'post_content'	=>	'<h1>Card Lookup Stub</h1>',
 				'post_name'		=>	'cardlookup',
@@ -110,17 +103,17 @@ function the_reality_theme_setup()
 				'post_status'	=>	'publish',
 				'post_type'		=>	'page'
 				),
-            'dealarchive'		=>	array(
+            'deals'    	=>	array(
 				'post_content'	=>	'<h1>Deal Archive stub</h1>',
-				'post_name'		=>	'dealarchive',
+				'post_name'		=>	'deals',
 				'post_title'	=>	'Deal Archive',
 				'post_status'	=>	'publish',
 				'post_type'		=>	'page'
 				),
-			'leaderboards'	    =>	array(
+			'leaderboard'	    =>	array(
 				'post_content'	=>	'<h2>Weekly Leaderboard</h2>[reality_leaderboard type="weekly"]<h2>TOTAL POINTS</h2>[reality_leaderboard]<h2>BIGGEST DEALS</h2>[reality_leaderboard type="biggest_deals"]<h2>MOST DEALS MADE</h2>[reality_leaderboard type="most_deals"]',
-				'post_name'		=>	'leaderboards',
-				'post_title'	=>	'Leaderboards',
+				'post_name'		=>	'leaderboard',
+				'post_title'	=>	'Leaderboard',
 				'post_status'	=>	'publish',
 				'post_type'		=>	'page'
 				),
@@ -168,9 +161,7 @@ If you want to make changes to a submission after you have submitted it, please 
 		
 			if ( $id = wp_insert_post( $page ) ) {
                 $post_id[ $key ] = $id;
-				if ( $key == 'about' ) $aboutID = $id;
-				if ( $key == 'leaderboards' ) $leaderboardsID = $id;
-			
+                
 				if ( !empty( $page['meta'] ) ) {
 				
 					foreach( $page['meta'] as $meta_key => $meta_value ) {
@@ -393,10 +384,10 @@ If you want to make changes to a submission after you have submitted it, please 
 							'menu-item-type'		=>	'disabled',
 							'menu-item-title'		=>	'Profile',
 							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$post_id['profile'],
+							//'menu-item-object-id'	=>	$post_id['profile'],
 							'menu-item-status'		=>	'publish'
 							), 
-						'feed'	=>	array(
+						'feed'  	=>	array(
 							'menu-item-type'		=>	'disabled',
 							'menu-item-title'		=>	'Feed',
 							'menu-item-object'		=>	'page',
@@ -417,21 +408,21 @@ If you want to make changes to a submission after you have submitted it, please 
 							'menu-item-object-id'	=>	$post_id['cardlookup'],
 							'menu-item-status'		=>	'publish'
 							),
-                        'dealarchive'	=>	array(
+                        'deals'	=>	array(
 							'menu-item-type'		=>	'disabled',
 							'menu-item-title'		=>	'Deal Archive',
-							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$post_id['dealarchive'],
+                            'menu-item-object'      =>  'page',
+							'menu-item-object-id'   =>  $post_id['deals'],
 							'menu-item-status'		=>	'publish'
 							),
-						'leaderboards'	=>	array(
+						'leaderboard'	=>	array(
 							'menu-item-type'		=>	'disabled',
 							'menu-item-title'		=>	'Leaderboard',
 							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$post_id['leaderboards'],
+							'menu-item-object-id'	=>	$post_id['leaderboard'],
 							'menu-item-status'		=>	'publish'
 							),
-                        'about'	=>	array(
+                        'about'	        =>	array(
 							'menu-item-type'		=>	'post_type',
 							'menu-item-title'		=>	'About',
 							'menu-item-object'		=>	'page',
@@ -452,6 +443,12 @@ If you want to make changes to a submission after you have submitted it, please 
 							'menu-item-object-id'	=>	$post_id['submit'],
 							'menu-item-status'		=>	'publish'
 							),
+                        'login'	=>	array(
+							'menu-item-type'		=>	'custom',
+							'menu-item-title'		=>	'Login',
+							'menu-item-url'         =>  site_url( 'login' ),
+							'menu-item-status'		=>	'publish'
+							),
 						),
 					'location'	=>	'logged_out_menu'	
 					),		
@@ -470,7 +467,7 @@ If you want to make changes to a submission after you have submitted it, please 
 							'menu-item-object'		=>	'page',
 							'menu-item-object-id'	=>	$bp_pages['activity'],
 							'menu-item-status'		=>	'publish'
-							), 
+							),                        
 						'members'	=>	array(
 							'menu-item-type'		=>	'post_type',
 							'menu-item-title'		=>	'Members',
@@ -485,18 +482,18 @@ If you want to make changes to a submission after you have submitted it, please 
 							'menu-item-object-id'	=>	$post_id['cardlookup'],
 							'menu-item-status'		=>	'publish'
 							),
-                        'dealarchive'	=>	array(
+                        'deals'	=>	array(
 							'menu-item-type'		=>	'post_type',
 							'menu-item-title'		=>	'Deal Archive',
-							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$post_id['dealarchive'],
+							'menu-item-object'      =>  'page',
+							'menu-item-object-id'   =>  $post_id['deals'],
 							'menu-item-status'		=>	'publish'
 							),
-						'leaderboards'	=>	array(
+						'leaderboard'	=>	array(
 							'menu-item-type'		=>	'post_type',
 							'menu-item-title'		=>	'Leaderboard',
 							'menu-item-object'		=>	'page',
-							'menu-item-object-id'	=>	$post_id['leaderboards'],
+							'menu-item-object-id'	=>	$post_id['leaderboard'],
 							'menu-item-status'		=>	'publish'
 							),
                         'about'	=>	array(

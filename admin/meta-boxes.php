@@ -210,17 +210,17 @@ $meta_boxes[] = array(
 	'priority' => 'high',
 	'fields' => array(
 		array(
-			'name'	=>	'Deal Logline',
+			'name'	=>	'Deal Description',
 			'id'	=>	"{$prefix}deal_logline",
 			'type'	=>	'textarea',
-			'desc'	=>	'The deal logline',
+			'desc'	=>	'The deal description',
 			'before'	=>	$youtube_video
 		),
 		array(
 			'name'	=>	'Deal YouTube Link',
 			'id'	=>	"{$prefix}deal_video_link",
 			'type'	=>	'text',
-			'desc'	=>	'The id of the deal YouTube Video'
+			'desc'	=>	'The YouTube Video link'
 		),
 		array(
 			'name'	=>	'Deal Files',

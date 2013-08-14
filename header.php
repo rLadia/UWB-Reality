@@ -136,7 +136,7 @@
 		</div>
 		<div class="horizontal-bar">
 			<div class="wrapper">
-				<div class="page-tagline">The bullpen belongs to you</div>
+				<div class="page-tagline">THE FEED IS YOURS</div>
 			</div>
 		</div>
 		

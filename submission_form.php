@@ -82,7 +82,7 @@ get_header(); ?>
   					<ul>
    						<li class="tab-maker-card"><a href="#maker-card"><?php _e('Maker Card', 'Reality' ); ?></a></li>
     					<li class="tab-deal-title"><a href="#deal-title"><?php _e('Title', 'Reality' ); ?></a></li>
-    					<li class="tab-log-line"><a href="#log-line"><?php _e('Log Line', 'Reality' ); ?></a></li>
+    					<li class="tab-log-line"><a href="#log-line"><?php _e('Deal Description', 'Reality' ); ?></a></li>
     					<li class="tab-video-url"><a href="#evidence"><?php _e( 'Evidence', 'Reality' ); ?></a></li>
     					<li class="tab-collaborators"><a href="#collaborators"><?php _e( 'Collaborators', 'Reality' ); ?></a></li>
     					<li class="tab-cards-and-notes"><a href="#cards-and-notes"><?php _e( 'Cards & Notes', 'Reality' ); ?></a></li>
@@ -100,7 +100,7 @@ get_header(); ?>
 						</div> 
 					</div>
 				  	<div id="deal-title">
-    					<label class="required"><?php _e('Deal Title', 'Reality'); ?></label>
+    					<label class="required"><?php _e('Enter Deal Title', 'Reality'); ?></label>
     					<div class="input-container">
     						<?php if ( isset( $_POST['deal_title'] ) && $_POST['deal_title'] != '' ) {
     								$deal_title = $_POST['deal_title']; 
@@ -111,7 +111,7 @@ get_header(); ?>
     					</div>
     				</div>
   					<div id="log-line">
-    					<label class="required"><?php _e('Deal Logline', 'Reality'); ?></label>
+    					<label class="required"><?php _e('Deal Description', 'Reality'); ?></label>
     					<div class="input-container">
     						<?php if ( isset( $_POST['deal_logline'] ) && $_POST['deal_logline'] != '' ) { $deal_logline = $_POST['deal_logline']; } else { $deal_logline = ''; } ?>
 							<textarea name="deal_logline" id="deal_logline" class="max-char" maxChar="300"><?php echo $deal_logline; ?></textarea>

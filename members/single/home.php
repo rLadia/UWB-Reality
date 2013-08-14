@@ -58,7 +58,7 @@ get_header( 'buddypress' ); ?>
 			<div class="horizontal-bar">
 				<div class="wrapper">
 					<div class="page-tagline">
-						<div class="two-third"><?php _e('Demografik','Reality') ?><?php if ( bp_is_my_profile() ) echo ' <a href="'.bp_core_get_userlink( bp_displayed_user_id(), false, true).'/profile/edit/">(Edit)</a>'?></div>
+						<div class="two-third"><?php _e('My Profile','Reality') ?><?php if ( bp_is_my_profile() ) echo ' <a href="'.bp_core_get_userlink( bp_displayed_user_id(), false, true).'/profile/edit/">(Edit)</a>'?></div>
 						<div class="one-third last browser-only"><?php _e('Collaborators','Reality'); ?></div>
 						<div class="clear"></div>
 					</div>

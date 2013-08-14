@@ -13,7 +13,7 @@
 
 	<div class="deal-thumb">
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<img src="<?php timthumb_photo(get_the_deal_image_url( false, 'large' ), 650, 366 ) ?>" alt="<?php the_title(); ?>">
+			<img src="<?php echo wpthumb(get_the_deal_image_url( false, 'large' ), 'width=650&height=366&crop=1' ); ?>" alt="<?php the_title(); ?>">
 		</a>
 	</div>
 	

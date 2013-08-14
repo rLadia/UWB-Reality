@@ -46,6 +46,13 @@ function uscreality_register_required_plugins() {
 			'required'	=>	true,
 			'force_activation' 		=> true, 
 			'force_deactivation' 	=> false
+		),
+		array(
+			'name'		=>	'WP-Thumb',
+			'slug'		=>	'wp-thumb',
+			'required'	=>	true,
+			'force_activation' 		=> true, 
+			'force_deactivation' 	=> false
 		)
 
 	);
@@ -268,6 +275,7 @@ function reality_thumbnail_images() {
 }
 add_action( 'init', 'reality_thumbnail_images' );
 
+/*
 // TIMTHUMB PHOTO GENERATOR
 function timthumb_photo( $img_src, $width = '', $height = '', $other_attr = '', $echo = true ) {
 	$output = get_bloginfo( 'stylesheet_directory' ).'/timthumb.php?src='.$img_src.'&w='.$width.'&h='.$height;
@@ -280,6 +288,7 @@ function timthumb_photo( $img_src, $width = '', $height = '', $other_attr = '', 
 		return $output;
 	}
 }
+*/
 
 // HANDLE DEAL SUBMISSION FORM
 

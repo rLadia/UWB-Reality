@@ -19,7 +19,7 @@ get_header(); ?>
 					<div class="two-third">
 						<div class="deal-thumbnail">
 							<a href="<?php the_deal_image_url() ?>" title="<?php the_title(); ?>" rel="fancybox">
-								<img src="<?php timthumb_photo( get_the_deal_image_url( false, 'large' ), 175, 175 ) ?>" alt="<?php the_title(); ?>">
+								<img src="<?php echo wpthumb( get_the_deal_image_url( false, 'large' ), 'width=175&height=175&crop=1' ); ?>" alt="<?php the_title(); ?>">
 							</a>
 						</div>
 						<div class="deal-title-authors">

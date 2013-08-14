@@ -127,7 +127,7 @@
 			<div class="wrapper">
 				<ul>
 					<?php foreach( $deals_array as $deal ) : ?>
-						<?php $thumbnailsrc = timthumb_photo( get_the_deal_image_url( $deal->ID, 'large' ), 140, 80, '', false ); ?>
+						<?php $thumbnailsrc = wpthumb( get_the_deal_image_url( $deal->ID, 'large' ), 'width=140&height=80&crop=1' ); ?>
 						<li class="<?php echo $deal->ID ?>" style="background-image:url(<?php echo $thumbnailsrc ?>);"></li>
 					<?php endforeach; ?>
 				</ul>

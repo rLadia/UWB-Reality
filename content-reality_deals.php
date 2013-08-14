@@ -5,7 +5,7 @@
 	<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 	<div class="deal-description"><?php the_excerpt(); ?></div>
 	<div class="deal-image">
-		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image:url(<?php timthumb_photo( get_the_deal_image_url( get_the_ID(), 'large' ), 284, 159 ) ?>)">
+		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background-image:url(<?php echo wpthumb( get_the_deal_image_url( get_the_ID(), 'large' ), 'width=284&height=159&crop=1' ); ?>)">
 			<div class="aspect-control"></div>
 			<div class="deal-points"><?php the_deal_points(); ?><span>points</span></div>
 		</a>

@@ -10,41 +10,41 @@ function the_reality_theme_setup()
     // Setup Default WordPress settings
 
     $bp_active_components = array( 
-      'xprofile' => true,
-      'settings' => true,
-      'friends' => true,
-      'messages' => true,
-      'activity' => true, 
-      'blogs' => true,
-      'members' => true );
+      'xprofile'  => true,
+      'settings'  => true,
+      'friends'   => true,
+      'messages'  => true,
+      'activity'  => true, 
+      'blogs'     => true,
+      'members'   => true );
 
     $default_audience_awards = array(
-      'funny'			=>	'Funny',
-      'suspenseful'	=>	'Suspenseful',
-      'romantic'		=>	'Romantic',
-      'masterpiece'	=>	'Masterpiece',
-      'techy'			=>	'Techy',
-      'crazy'			=>	'Crazy'
+      'funny'       =>  'Funny',
+      'suspenseful' =>  'Suspenseful',
+      'romantic'    =>  'Romantic',
+      'masterpiece' =>  'Masterpiece',
+      'techy'       =>  'Techy',
+      'crazy'       =>  'Crazy'
     );
     $default_point_values = array(
-      'activity_update'	=>	array( 'name' => 'Post Update', 'value' => 5 ),
-      'activity_comment'	=>	array( 'name' => 'Post Comment', 'value' => 10 ),
-      'reality_rate_deal'	=>	array( 'name' => 'Rate Deal', 'value' => 15 ),
-      'photo_blog_update'	=>	array( 'name' => 'Photo Blog Update', 'value' => 10 ),
-      'reality_card_comment'	=>	array( 'name' => 'Reality Card Comment', 'value' => 10 )
+      'activity_update'   =>  array( 'name' => 'Post Update', 'value' => 5 ),
+      'activity_comment'  =>  array( 'name' => 'Post Comment', 'value' => 10 ),
+      'reality_rate_deal' =>  array( 'name' => 'Rate Deal', 'value' => 15 ),
+      'photo_blog_update' =>  array( 'name' => 'Photo Blog Update', 'value' => 10 ),
+      'reality_card_comment'  =>  array( 'name' => 'Reality Card Comment', 'value' => 10 )
     );
     $default_rank_values = array(
-      0	=>	array( 'rank_name' => 'Rebel', 'rank_slug' => 'rebel' ),
-      30	=>	array( 'rank_name' => 'Iconoclast', 'rank_slug' => 'iconoclast' ),
-      100	=>	array( 'rank_name' => 'Instigator', 'rank_slug' => 'instigator' ),
-      200	=>	array( 'rank_name' => 'Revolutionary', 'rank_slug' => 'revolutionary' ),
-      300	=>	array( 'rank_name' => 'Ring Leader', 'rank_slug' => 'ring-leader' ),
-      500	=>	array( 'rank_name' => 'Visionary', 'rank_slug' => 'visionary' ),
-      1000	=>	array( 'rank_name' => 'Mastermind', 'rank_slug' => 'mastermind' ),
-      2000	=>	array( 'rank_name' => 'Badass', 'rank_slug' => 'badass' ),
-      5000	=>	array( 'rank_name' => 'Legend', 'rank_slug' => 'legend' ),
-      10000	=>	array( 'rank_name' => 'Assistant to the Producer', 'rank_slug' => 'assistant-to-the-producer' ),
-      50000	=>	array( 'rank_name' => 'God', 'rank_slug' => 'god' )
+      0     =>  array( 'rank_name' => 'Rebel', 'rank_slug' => 'rebel' ),
+      30    =>  array( 'rank_name' => 'Iconoclast', 'rank_slug' => 'iconoclast' ),
+      100   =>  array( 'rank_name' => 'Instigator', 'rank_slug' => 'instigator' ),
+      200   =>  array( 'rank_name' => 'Revolutionary', 'rank_slug' => 'revolutionary' ),
+      300   =>  array( 'rank_name' => 'Ring Leader', 'rank_slug' => 'ring-leader' ),
+      500   =>  array( 'rank_name' => 'Visionary', 'rank_slug' => 'visionary' ),
+      1000  =>  array( 'rank_name' => 'Mastermind', 'rank_slug' => 'mastermind' ),
+      2000  =>  array( 'rank_name' => 'Badass', 'rank_slug' => 'badass' ),
+      5000  =>  array( 'rank_name' => 'Legend', 'rank_slug' => 'legend' ),
+      10000 =>  array( 'rank_name' => 'Assistant to the Producer', 'rank_slug' => 'assistant-to-the-producer' ),
+      50000 =>  array( 'rank_name' => 'God', 'rank_slug' => 'god' )
     );
     $default_fourohfour = '<h1>Could not find this page!</h1>';
 
@@ -52,23 +52,23 @@ function the_reality_theme_setup()
     $front_page = $bp_pages['activity'];
 
     $core_settings = array(
-      'posts_per_page'							=>	9,
-      //'permalink_structure'				=>	'/%postname%/',
-      'default_role' 								=>	'player',
-      'show_on_front' 							=>	'page',
-      'page_on_front'								=>	$front_page,
-      //'bp-active-components'			=>	$bp_active_components,
-      'bp-disable-account-deletion'     =>	1,
-      'hide-loggedout-adminbar'					=>	1,
-      'reality_audience_award_options'  =>	$default_audience_awards,
-      'reality_404_content'						  =>	$default_fourohfour,
-      'reality_activity_point_values'		=>	$default_point_values,
-      'reality_rank_values'						  =>	$default_rank_values,
-      'reality_submit_form_author_autosuggest'  =>	2,
-      'reality_submit_form_card_autosuggest'		=>	3,
-      'reality_game_installed_date'			        =>	time(),
-      'reality_weekly_leaderboard_reset'			  =>	'Monday',
-      'reality_card_navigation'					        =>	0
+      'posts_per_page'              =>  9,
+      //'permalink_structure'       =>  '/%postname%/',
+      'default_role'                =>  'player',
+      'show_on_front'               =>  'page',
+      'page_on_front'               =>  $front_page,
+      //'bp-active-components'      =>  $bp_active_components,
+      'bp-disable-account-deletion'     =>  1,
+      'hide-loggedout-adminbar'         =>  1,
+      'reality_audience_award_options'  =>  $default_audience_awards,
+      'reality_404_content'             =>  $default_fourohfour,
+      'reality_activity_point_values'   =>  $default_point_values,
+      'reality_rank_values'             =>  $default_rank_values,
+      'reality_submit_form_author_autosuggest'  =>  2,
+      'reality_submit_form_card_autosuggest'    =>  3,
+      'reality_game_installed_date'             =>  time(),
+      'reality_weekly_leaderboard_reset'        =>  'Monday',
+      'reality_card_navigation'                 =>  0
     );
     foreach ( $core_settings as $k => $v ) {
       update_option( $k, $v );
@@ -82,65 +82,65 @@ function the_reality_theme_setup()
     // Setup Reality Pages
 
     $default_pages = array(
-      'cardlookup'		=>	array(
-        'post_name'		  =>	'cardlookup',
-        'post_title'	  =>	'Card Lookup',
-        'post_status'	  =>	'publish',
-        'post_type'		  =>	'page',
-        'meta'			    =>	array(
-          '_wp_page_template'	 =>	'archive-reality_cards.php',
+      'cardlookup'    =>  array(
+        'post_name'     =>  'cardlookup',
+        'post_title'    =>  'Card Lookup',
+        'post_status'   =>  'publish',
+        'post_type'     =>  'page',
+        'meta'          =>  array(
+          '_wp_page_template'  => 'archive-reality_cards.php',
         ),
       ),
-      'deals'    	    =>	array(
-        'post_name'		  =>	'deals',
-        'post_title'	  =>	'Deal Archive',
-        'post_status'	  =>	'publish',
-        'post_type'		  =>	'page',
-        'meta'			    =>	array(
-          '_wp_page_template'	 =>	'archive-reality_deals.php',
+      'deals'         =>  array(
+        'post_name'     =>  'deals',
+        'post_title'    =>  'Deal Archive',
+        'post_status'   =>  'publish',
+        'post_type'     =>  'page',
+        'meta'          =>  array(
+          '_wp_page_template'  => 'archive-reality_deals.php',
         ),
       ),
-      'leaderboard'	  =>	array(
-        'post_content'	=>	'<h2>Weekly Leaderboard</h2>[reality_leaderboard type="weekly"]<h2>TOTAL POINTS</h2>[reality_leaderboard]<h2>BIGGEST DEALS</h2>[reality_leaderboard type="biggest_deals"]<h2>MOST DEALS MADE</h2>[reality_leaderboard type="most_deals"]',
-        'post_name'		  =>	'leaderboard',
-        'post_title'	  =>	'Leaderboard',
-        'post_status'	  =>	'publish',
-        'post_type'		  =>	'page'
+      'leaderboard'   =>  array(
+        'post_content'  =>  '<h2>Weekly Leaderboard</h2>[reality_leaderboard type="weekly"]<h2>TOTAL POINTS</h2>[reality_leaderboard]<h2>BIGGEST DEALS</h2>[reality_leaderboard type="biggest_deals"]<h2>MOST DEALS MADE</h2>[reality_leaderboard type="most_deals"]',
+        'post_name'     =>  'leaderboard',
+        'post_title'    =>  'Leaderboard',
+        'post_status'   =>  'publish',
+        'post_type'     =>  'page'
       ),
-      'about'		      =>	array(
-        'post_content'	=>	'<h1>Insert Your About Content Here</h1>',
-        'post_name'		  =>	'about',
-        'post_title'	  =>	'About',
-        'post_status'	  =>	'publish',
-        'post_type'		  =>	'page',
+      'about'         =>  array(
+        'post_content'  =>  '<h1>Insert Your About Content Here</h1>',
+        'post_name'     =>  'about',
+        'post_title'    =>  'About',
+        'post_status'   =>  'publish',
+        'post_type'     =>  'page',
       ),
-      'photoblog'	    =>	array(
-        'post_content'	=>	'<h1>Photoblog stub</h1>',
-        'post_name'		  =>	'photoblog',
-        'post_title'	  =>	'Photoblog',
-        'post_status'	  =>	'publish',
-        'post_type'		  =>	'page',
+      'photoblog'     =>  array(
+        'post_content'  =>  '<h1>Photoblog stub</h1>',
+        'post_name'     =>  'photoblog',
+        'post_title'    =>  'Photoblog',
+        'post_status'   =>  'publish',
+        'post_type'     =>  'page',
       ),
-      'submit'	      =>	array(
-        'post_content'	=>	'<p style="text-align: center;">If there are additional materials that you feel you need to submit, mention them in the "Notes" before submitting your Deal.
+      'submit'        =>  array(
+        'post_content'  =>  '<p style="text-align: center;">If there are additional materials that you feel you need to submit, mention them in the "Notes" before submitting your Deal.
         Some types of challenges will require you to submit a .zip archive. Creating a .zip is super easy. Click for tips on doing it on a <a title="Zip for MAC" href="http://docs.info.apple.com/article.html?path=Mac/10.6/en/8726.html" target="_blank">Mac</a> or a <a title="Zip for Windows" href="http://windows.microsoft.com/en-US/windows-vista/Compress-and-uncompress-files-zip-files" target="_blank">PC</a>.
         If you want to make changes to a submission after you have submitted it, please resubmit: we will use the most recent version.</p>',
-        'post_name'		  =>	'submit',
-        'post_title'	  =>	'Submit a Deal',
-        'post_status'	  =>	'private',
-        'post_type'		  =>	'page',
-        'meta'			    =>	array(
-          '_wp_page_template'	      =>	'submission_form.php',
-          'REALITY_success_message'	=>	'<h2>You Have Successfully Submitted a Deal!</h2>'
+        'post_name'     =>  'submit',
+        'post_title'    =>  'Submit a Deal',
+        'post_status'   =>  'private',
+        'post_type'     =>  'page',
+        'meta'          =>  array(
+          '_wp_page_template'       =>  'submission_form.php',
+          'REALITY_success_message' =>  '<h2>You Have Successfully Submitted a Deal!</h2>'
         )
       ),
-      'login'         =>	array(
-        'post_name'		  =>	'login',
-        'post_title'	  =>	'Login',
-        'post_status'	  =>	'publish',
-        'post_type'		  =>	'page',
-        'meta'			    =>	array(
-          '_wp_page_template'	=>	'reality_login.php'
+      'login'         =>  array(
+        'post_name'     =>  'login',
+        'post_title'    =>  'Login',
+        'post_status'   =>  'publish',
+        'post_type'     =>  'page',
+        'meta'          =>  array(
+          '_wp_page_template' =>  'reality_login.php'
         )
       )
     );
@@ -167,20 +167,20 @@ function the_reality_theme_setup()
     // Setup Card Type Categories
 
     $default_card_types = array(
-      'Maker'	  =>	array(
-        'slug'	=>	'maker'
+      'Maker'   =>  array(
+        'slug'  =>  'maker'
       ),
-      'Property'=>	array(
-        'slug'	=>	'property'
+      'Property'=>  array(
+        'slug'  =>  'property'
       ),
-      'Player'	=>	array(
-        'slug'	=>	'player'
+      'Player'  =>  array(
+        'slug'  =>  'player'
       ),
-      'Special'	=>	array(
-        'slug'	=>	'special'
+      'Special' =>  array(
+        'slug'  =>  'special'
       ),
-      'Utility'	=>	array(
-        'slug'	=>	'utility'
+      'Utility' =>  array(
+        'slug'  =>  'utility'
       )
     );
 
@@ -193,41 +193,41 @@ function the_reality_theme_setup()
     // Setup Card Connections
 
     $default_card_connections = array(
-      '0 Out'	     =>	array(
-        'slug'	=>	'zero_out'
+      '0 Out'      => array(
+        'slug'  =>  'zero_out'
       ),
-      '1 Out Bottom'	=>	array(
-        'slug'	=>	'one_out_bottom'
+      '1 Out Bottom'  =>  array(
+        'slug'  =>  'one_out_bottom'
       ),
-      '1 Out Bottom Special'	=>	array(
-        'slug'	=>	'one_out_bottom_special'
+      '1 Out Bottom Special'  =>  array(
+        'slug'  =>  'one_out_bottom_special'
       ),
-      '1 Out Left'	=>	array(
-        'slug'	=>	'one_out_left'
+      '1 Out Left'  =>  array(
+        'slug'  =>  'one_out_left'
       ),
-      '1 Out Right'	=>	array(
-        'slug'	=>	'one_out_right'
+      '1 Out Right' =>  array(
+        'slug'  =>  'one_out_right'
       ),
-      '2 Out Left'	=>	array(
-        'slug'	=>	'two_out_left'
+      '2 Out Left'  =>  array(
+        'slug'  =>  'two_out_left'
       ),
-      '2 Out Left Special'	=>	array(
-        'slug'	=>	'two_out_left_special'
+      '2 Out Left Special'  =>  array(
+        'slug'  =>  'two_out_left_special'
       ),
-      '2 Out Right'	=>	array(
-        'slug'	=>	'two_out_right'
+      '2 Out Right' =>  array(
+        'slug'  =>  'two_out_right'
       ),
-      '2 Out Right Special'	=>	array(
-        'slug'	=>	'two_out_right_special'
+      '2 Out Right Special' =>  array(
+        'slug'  =>  'two_out_right_special'
       ),
-      '3 Out'	      =>	array(
-        'slug'	=>	'three_out'
+      '3 Out'       =>  array(
+        'slug'  =>  'three_out'
       ),
-      '3 Out Special'	=>	array(
-        'slug'	=>	'three_out_special'
+      '3 Out Special' =>  array(
+        'slug'  =>  'three_out_special'
       ),
-      'Wildcard'	  =>	array(
-        'slug'	=>	'wildcard'
+      'Wildcard'    =>  array(
+        'slug'  =>  'wildcard'
       )
     );
 
@@ -254,29 +254,29 @@ function the_reality_theme_setup()
     // Prepopulate Card Values
 
     $default_values = array(
-      '10 15 25'	=>	array(
-        'description'	=> '10,15,25'
+      '10 15 25'  =>  array(
+        'description' => '10,15,25'
       ),
-      '10 20 25'	=>	array(
-        'description'	=>	'10,20,25'
+      '10 20 25'  =>  array(
+        'description' =>  '10,20,25'
       ),
-      '15 20 30'	=>	array(
-        'description'	=>	'15,20,30'
+      '15 20 30'  =>  array(
+        'description' =>  '15,20,30'
       ),
-      '20 25 35'	=>	array(
-        'description'	=>	'20,25,35'
+      '20 25 35'  =>  array(
+        'description' =>  '20,25,35'
       ),
-      '25 30 40'	=>	array(
-        'description'	=>	'25,30,40'
+      '25 30 40'  =>  array(
+        'description' =>  '25,30,40'
       ),
-      '25'	      =>	array(
-        'description'	=>	'25'
+      '25'        =>  array(
+        'description' =>  '25'
       ),
-      '5 10 15'	  =>	array(
-        'description'	=>	'5,10,15'
+      '5 10 15'   =>  array(
+        'description' =>  '5,10,15'
       ),
-      '5 10 20'	  =>	array(
-        'description'	=>	'5,10,20'
+      '5 10 20'   =>  array(
+        'description' =>  '5,10,20'
       )
     );
 
@@ -299,12 +299,12 @@ function the_reality_theme_setup()
           foreach( $users->results as $user ) {
 
             $additional_user_info = array(
-              'nicename'	=>	$user->user_nicename
+              'nicename'  =>  $user->user_nicename
             );
 
             $author_args = array(
-              'slug'	=>	$user->ID,
-              'description'	=>	serialize( $additional_user_info )
+              'slug'  =>  $user->ID,
+              'description' =>  serialize( $additional_user_info )
             );
 
             wp_insert_term( $user->display_name, 'authors-tax', $author_args );
@@ -334,12 +334,12 @@ function the_reality_theme_setup()
             }
 
             $rank_info = array(
-              'current_rank'			=>	$current_rank,
-              'current_rank_slug'		=>	$current_rank_slug,
-              'points_to_next_level'	=>	$points_to_next_level,
-              'points_spread'			=>	$points_spread,
-              'percent_to_next_level'	=>	$percent_to_next_level,
-              'points_towards_next_level'	=>	$points_towards_next_level
+              'current_rank'      =>  $current_rank,
+              'current_rank_slug'   =>  $current_rank_slug,
+              'points_to_next_level'  =>  $points_to_next_level,
+              'points_spread'     =>  $points_spread,
+              'percent_to_next_level' =>  $percent_to_next_level,
+              'points_towards_next_level' =>  $points_towards_next_level
             );
 
             update_user_meta( $user->ID, 'reality_current_rank', $rank_info );
@@ -357,124 +357,124 @@ function the_reality_theme_setup()
     // @uses wp_update_nav_menu_item( $menu_id = 0, $menu_item_db_id = 0, $menu_item_data = array() )
 
     $default_menus = array(
-      'Footer Menu'		=>	array(
-        'menu-items'	=>	array(
-          'about'	    =>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'About',
-            'menu-item-object'		=>	'page',
-            'menu-item-object-id'	=>	$post_id['about'],
-            'menu-item-status'		=>	'publish'
+      'Footer Menu'   =>  array(
+        'menu-items'  =>  array(
+          'about'     =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'About',
+            'menu-item-object'    =>  'page',
+            'menu-item-object-id' =>  $post_id['about'],
+            'menu-item-status'    =>  'publish'
           )
         ),
-        'location'	=>	'footer_menu'
+        'location'  =>  'footer_menu'
       ),
-      'Logged Out Menu'	=>  array(
+      'Logged Out Menu' =>  array(
         'menu-items'    =>  array(
-          'feed'  	    =>	array(
-            'menu-item-type'		  =>	'disabled',
-            'menu-item-title'		  =>	'Feed',
-            'menu-item-status'		=>	'publish'
+          'feed'        =>  array(
+            'menu-item-type'      =>  'disabled',
+            'menu-item-title'     =>  'Feed',
+            'menu-item-status'    =>  'publish'
           ), 
-          'members'	    =>	array(
-            'menu-item-type'		  =>	'disabled',
-            'menu-item-title'		  =>	'Members',
-            'menu-item-status'		=>	'publish'
+          'members'     =>  array(
+            'menu-item-type'      =>  'disabled',
+            'menu-item-title'     =>  'Members',
+            'menu-item-status'    =>  'publish'
           ),
-          'cardlookup'	=>	array(
-            'menu-item-type'		  =>	'disabled',
-            'menu-item-title'		  =>	'Card Lookup',
-            'menu-item-status'		=>	'publish'
+          'cardlookup'  =>  array(
+            'menu-item-type'      =>  'disabled',
+            'menu-item-title'     =>  'Card Lookup',
+            'menu-item-status'    =>  'publish'
           ),
-          'deals'	      =>	array(
-            'menu-item-type'		  =>	'disabled',
-            'menu-item-title'		  =>	'Deal Archive',
-            'menu-item-status'		=>	'publish'
+          'deals'       =>  array(
+            'menu-item-type'      =>  'disabled',
+            'menu-item-title'     =>  'Deal Archive',
+            'menu-item-status'    =>  'publish'
           ),
-          'leaderboard'	=>	array(
-            'menu-item-type'		  =>	'disabled',
-            'menu-item-title'		  =>	'Leaderboard',
-            'menu-item-status'		=>	'publish'
+          'leaderboard' =>  array(
+            'menu-item-type'      =>  'disabled',
+            'menu-item-title'     =>  'Leaderboard',
+            'menu-item-status'    =>  'publish'
           ),
-          'about'	      =>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'About',
-            'menu-item-object'		=>	'page',
-            'menu-item-object-id'	=>	$post_id['about'],
-            'menu-item-status'		=>	'publish'
+          'about'       =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'About',
+            'menu-item-object'    =>  'page',
+            'menu-item-object-id' =>  $post_id['about'],
+            'menu-item-status'    =>  'publish'
           ),
-          'photoblog'	  =>	array(
-            'menu-item-type'		  =>	'disabled',
-            'menu-item-title'		  =>	'Photoblog',
-            'menu-item-status'		=>	'publish'
+          'photoblog'   =>  array(
+            'menu-item-type'      =>  'disabled',
+            'menu-item-title'     =>  'Photoblog',
+            'menu-item-status'    =>  'publish'
           ),
-          'submit'	    =>	array(
-            'menu-item-type'		  =>	'disabled',
-            'menu-item-title'		  =>	'Submit',
-            'menu-item-status'		=>	'publish'
+          'submit'      =>  array(
+            'menu-item-type'      =>  'disabled',
+            'menu-item-title'     =>  'Submit',
+            'menu-item-status'    =>  'publish'
           ),
-          'login'	      =>	array(
-            'menu-item-type'		  =>	'custom',
-            'menu-item-title'		  =>	'Login',
+          'login'       =>  array(
+            'menu-item-type'      =>  'custom',
+            'menu-item-title'     =>  'Login',
             'menu-item-url'       =>  site_url( 'login' ),
-            'menu-item-status'		=>	'publish'
+            'menu-item-status'    =>  'publish'
           ),
         ),
-        'location'	=>	'logged_out_menu'	
-      ),		
-      'Main Menu'			  =>	array(
-        'menu-items'	  =>	array(
-          'feed'	      =>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'Feed',
-            'menu-item-object'		=>	'page',
-            'menu-item-object-id'	=>	$bp_pages['activity'],
-            'menu-item-status'		=>	'publish'
+        'location'  =>  'logged_out_menu' 
+      ),    
+      'Main Menu'       =>  array(
+        'menu-items'    =>  array(
+          'feed'        =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'Feed',
+            'menu-item-object'    =>  'page',
+            'menu-item-object-id' =>  $bp_pages['activity'],
+            'menu-item-status'    =>  'publish'
           ),                        
-          'members'	    =>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'Members',
-            'menu-item-object'		=>	'page',
-            'menu-item-object-id'	=>	$bp_pages['members'],
-            'menu-item-status'		=>	'publish'
+          'members'     =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'Members',
+            'menu-item-object'    =>  'page',
+            'menu-item-object-id' =>  $bp_pages['members'],
+            'menu-item-status'    =>  'publish'
           ),
-          'cardlookup'	=>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'Card Lookup',
-            'menu-item-object'		=>	'page',
-            'menu-item-object-id'	=>	$post_id['cardlookup'],
-            'menu-item-status'		=>	'publish'
+          'cardlookup'  =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'Card Lookup',
+            'menu-item-object'    =>  'page',
+            'menu-item-object-id' =>  $post_id['cardlookup'],
+            'menu-item-status'    =>  'publish'
           ),
-          'deals'	      =>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'Deal Archive',
+          'deals'       =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'Deal Archive',
             'menu-item-object'    =>  'page',
             'menu-item-object-id' =>  $post_id['deals'],
-            'menu-item-status'		=>	'publish'
+            'menu-item-status'    =>  'publish'
           ),
-          'leaderboard'	=>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'Leaderboard',
-            'menu-item-object'		=>	'page',
-            'menu-item-object-id'	=>	$post_id['leaderboard'],
-            'menu-item-status'		=>	'publish'
+          'leaderboard' =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'Leaderboard',
+            'menu-item-object'    =>  'page',
+            'menu-item-object-id' =>  $post_id['leaderboard'],
+            'menu-item-status'    =>  'publish'
           ),
-          'about'	      =>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'About',
-            'menu-item-object'		=>	'page',
-            'menu-item-object-id'	=>	$post_id['about'],
-            'menu-item-status'		=>	'publish'
+          'about'       =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'About',
+            'menu-item-object'    =>  'page',
+            'menu-item-object-id' =>  $post_id['about'],
+            'menu-item-status'    =>  'publish'
           ),
-          'submit'	    =>	array(
-            'menu-item-type'		  =>	'post_type',
-            'menu-item-title'		  =>	'Submit',
-            'menu-item-object'		=>	'page',
-            'menu-item-object-id'	=>	$post_id['submit'],
-            'menu-item-status'		=>	'publish'
+          'submit'      =>  array(
+            'menu-item-type'      =>  'post_type',
+            'menu-item-title'     =>  'Submit',
+            'menu-item-object'    =>  'page',
+            'menu-item-object-id' =>  $post_id['submit'],
+            'menu-item-status'    =>  'publish'
           ),
         ),
-        'location'	=>	'primary'
+        'location'  =>  'primary'
       )
     );
 
@@ -482,7 +482,7 @@ function the_reality_theme_setup()
 
     foreach( $default_menus as $menu_name => $menu_args ) {
       $menu_data = array(
-        'menu-name'	=>	$menu_name
+        'menu-name' =>  $menu_name
       );
       if ( $menu_id = wp_update_nav_menu_object( 0, $menu_data ) ) {
 

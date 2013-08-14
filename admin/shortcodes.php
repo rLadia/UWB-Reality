@@ -149,7 +149,7 @@ function generate_reality_card( $atts, $content = null ) {
 				$output .= '</div>';
 			
 			$output .= '<img src="';
-				isset( $image ) ? $output .= timthumb_photo( $image[0], 155, 155, '', false) : false;
+				isset( $image ) ? $output .= wpthumb( $image[0], 'width=155&height=155&crop=1') : false;
 				$output .= '" alt="';
 				isset( $card_post_meta['REALITY_card_back_title'][0] ) ? $output .= $card_post_meta['REALITY_card_back_title'][0] : false;
 				$output .= '" />';

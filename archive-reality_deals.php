@@ -3,23 +3,24 @@
   <div id="content" role="main">
     <div class="deal-archive">
 
-    <?php if ( isset($_GET['deals_search']) && $_GET['deals_search'] != '' ) : ?>
-
       <?php 
 
       global $wp_query;
-      $search = $_GET['deals_search'];
+      $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged') : 1; 
 
       $deal_search_args = array(
         'post_type'	=>	'reality_deals',
-        's'			=>	$search
+        'paged'     => $paged,
       ); 
+
+      if ( isset($_GET['deals_search']) && $_GET['deals_search'] != '' ) {
+        $search = $_GET['deals_search'];
+        $deal_search_args['s'] = $search;
+      }
 
       $wp_query = new WP_Query( $deal_search_args );
 
       ?>
-
-    <?php endif; ?>
 
     <?php if ( have_posts() ) : ?>
       <?php $count = 1; ?>
@@ -29,7 +30,7 @@
 
       get_template_part( 'content', 'reality_deals' );
 
-      if ( $count%3 == 0 ) {
+      if ( $count % 3 == 0 ) {
         echo '<div class="clear"></div>';
       }
 
@@ -44,6 +45,7 @@
       <h1 style="text-align:center;">No deals have been made yet!</h1>
     <?php endif; ?>
     </div>
-  </div><!-- #content -->
+  </div> <!-- #content -->
 </div>
 <?php get_footer(); ?>
+

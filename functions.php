@@ -176,7 +176,7 @@ add_action( 'init', 'reality_enqueue_styles');
 
 function reality_add_default_avatar( $url )
 {
-	return 'http://reality.usc.edu/assets/avatars/89/90d34f5df6df0d7c40edc87e792b7a4f-bpfull.jpg';
+	return 'https://students.washington.edu/qustom/reality-logo.png';
 }
 add_filter( 'bp_core_mysteryman_src', 'reality_add_default_avatar' );
 

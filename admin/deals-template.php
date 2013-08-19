@@ -122,7 +122,8 @@ function get_the_deal_content( $post_id = false ) {
 				$imageSrcFull = wp_get_attachment_image_src( $image, 'full' );
 				$imageSrcLarge = wp_get_attachment_image_src( $image, 'large' );
 				
-				$output .= '<a href="'.$imageSrcFull[0].'" title="'.$post_title.'" rel="fancybox"><img src="'.timthumb_photo( $imageSrcLarge[0], 635, '', '', false).'" alt="'.$post_title.'"></a>';
+				//$output .= '<a href="'.$imageSrcFull[0].'" title="'.$post_title.'" rel="fancybox"><img src="'.timthumb_photo( $imageSrcLarge[0], 635, '', '', false).'" alt="'.$post_title.'"></a>';
+				$output .= '<a href="'.$imageSrcFull[0].'" title="'.$post_title.'" rel="fancybox"><img src="'.wpthumb( $imageSrcLarge[0], 'width=635&height=635&crop=1').'" alt="'.$post_title.'"></a>';
 				
 				$output .= '</li>';
 			

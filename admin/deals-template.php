@@ -148,7 +148,7 @@ function get_the_deal_content( $post_id = false ) {
 					case 'application/zip':
 						$output .= '<li>';
 						$output .= '<h3>ZIP</h3>';
-						$output .= '<a href="'.$fileSrc.'" title="'.$post_title.'" class="download-file" type="'. $attachment->post_mime_type .'">Click Here to Download File</a>';
+						$output .= '<a href="'.$fileSrc.'" title="'.$post_title.'" class="download-file" type="'. $attachment->post_mime_type .'"></a>';
 						$output .= '</li>';
 						break;
 					case 'application/pdf':
@@ -183,7 +183,7 @@ function get_the_deal_content( $post_id = false ) {
 						break;
 					default:
 						$output .= '<li>';
-						$output .= '<a href="'.$fileSrc.'" title="'.$post_title.'" class="download-file" type="'. $attachment->post_mime_type .'">Click Here to Download File</a>';
+						$output .= '<a href="'.$fileSrc.'" title="'.$post_title.'" class="download-file" type="'. $attachment->post_mime_type .'"></a>';
 						$output .= '</li>';
 				}
 			

@@ -127,7 +127,7 @@ jQuery(document).ready( function($) {
 	
 		var card_id = $(this).val();
 		
-		if ( card_id.length == 5 ) {
+		if ( card_id.length == 3 ) {
 		
 			$(this).addClass('loading');
 		

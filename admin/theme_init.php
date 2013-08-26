@@ -108,16 +108,39 @@ function the_reality_theme_setup()
         'post_type'     =>  'page'
       ),
       'about'         =>  array(
-        'post_content'  =>  '<h1>Insert Your About Content Here</h1>',
+        'post_content'  =>  '<h1><b>Welcome to the games</b></h1>
+<h2>What do I do?</h2>
+The games are about making—making partnerships, making media, and making deals. By making deals you earn points and prestige, and earn the favor of the Director. It never hurts when the Director likes you.
+
+&nbsp;
+<h2>How do I do that?</h2>
+Start with a green card- that tells you what you’re making. This could be anything from a 30 second short to a facebook group to a card game. Next, you need to connect your card, using its arrows, to any other card. Once you have a connection, you have a deal. Maybe you’re making a manual involving nuclear war. Maybe you’re making a card game that includes a bicycle— if you can connect it, make it.  But don’t stop there- keep connecting. Make a card game involving nuclear war AND a bicycle—as long as you can connect cards with their arrows, you can make your deal bigger, better, and worth more points.
+
+&nbsp;
+<h2>How big can a deal be?</h2>
+As big as you can make it. Surprise us.
+
+&nbsp;
+<h2>Can I work with other people?</h2>
+Absolutely. If two people work on a deal, two people get the points. If ten people work on a deal, ten people get the points. There is no spiti— you all get all of them. More people, more cards, more points for everyone. Get your friends involved, and work together to win it all.
+
+&nbsp;
+<h2>What do I get?</h2>
+Points, prestige, and fabulous prizes. A happy director is a generous director. There will be a winner every week.
+
+&nbsp;
+<h2>Where do I ask questions?</h2>
+Office hours are from 12:00pm-5:00pm, Monday/Tuesday/Thursday.
+
+&nbsp;
+<h2>What else is there to do?</h2>
+You never know. Keep watching, look for the eye, and carry your cards with you at all times. We always have more secrets in store, and you never know when or where the games will find you.
+
+&nbsp;
+<h2>Who are you? Who is the director? What do you people want?</h2>
+<p style="text-align: center;"><img class=" wp-image-594 aligncenter" alt="Reality-Logo-White-fill" src="http://games.illuminatiuwb.com/wp-content/uploads/cache/2013/08/Reality-Logo-White-fill/1132444017.png" width="108" height="62" /></p>',
         'post_name'     =>  'about',
         'post_title'    =>  'About',
-        'post_status'   =>  'publish',
-        'post_type'     =>  'page',
-      ),
-      'photoblog'     =>  array(
-        'post_content'  =>  '<h1>Photoblog stub</h1>',
-        'post_name'     =>  'photoblog',
-        'post_title'    =>  'Photoblog',
         'post_status'   =>  'publish',
         'post_type'     =>  'page',
       ),
@@ -401,11 +424,6 @@ function the_reality_theme_setup()
             'menu-item-title'     =>  'About',
             'menu-item-object'    =>  'page',
             'menu-item-object-id' =>  $post_id['about'],
-            'menu-item-status'    =>  'publish'
-          ),
-          'photoblog'   =>  array(
-            'menu-item-type'      =>  'disabled',
-            'menu-item-title'     =>  'Photoblog',
             'menu-item-status'    =>  'publish'
           ),
           'submit'      =>  array(

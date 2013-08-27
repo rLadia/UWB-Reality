@@ -58,17 +58,13 @@ get_header( 'buddypress' ); ?>
       <div class="horizontal-bar">
         <div class="wrapper">
           <div class="page-tagline">
-            <div class="two-third"><?php _e('My Profile','Reality') ?><?php if ( bp_is_my_profile() ) echo ' <a href="'.bp_core_get_userlink( bp_displayed_user_id(), false, true).'/profile/edit/">(Edit)</a>'?></div>
-            <div class="one-third last browser-only"><?php _e('Collaborators','Reality'); ?></div>
+            <div><?php _e('Collaborators','Reality'); ?></div>
             <div class="clear"></div>
-          </div>
+            </div>
         </div>
       </div>
       <div class="reality-user-profile wrapper">
-        <div class="two-third">		
-          <?php locate_template( array( 'members/single/profile.php'   ), true ); ?>
-        </div>
-        <div class="one-third last">
+        <div>
 
           <?php if ( friends_check_user_has_friends( bp_displayed_user_id() ) ) : ?>
           <ul class="friends-array">

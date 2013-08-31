@@ -115,7 +115,7 @@
 				<?php endwhile; ?>
 				
 				<?php else : ?>
-				
+
 					<li class="header-slider">
 						<div class="slider-bg" style="background-image:url(<?php bloginfo( 'stylesheet_directory' ) ?>/images/reality-logo_326x326.png);background-size: 326px 326px;"></div>
 					</li>
@@ -136,7 +136,7 @@
 		</div>
 		<div class="horizontal-bar">
 			<div class="wrapper">
-				<div class="page-tagline">THE FEED IS YOURS</div>
+				<div class="page-tagline">The Feed is yours</div>
 			</div>
 		</div>
 		
@@ -252,10 +252,18 @@
 						<div class="aspect-control"></div>
 					</div>
 				
+				<?php elseif ( is_user_logged_in() ) : ?>
+					
+					<li class="header-slider">
+						<div id="header-with-image" style="background-image:url(<?php echo random_header_image() ; ?>);">
+							<div class="aspect-control"></div>
+						</div>
+					</li>
+				
 				<?php else : ?>
 					
 					<?php //ADD DEFAULT IMAGE ?>
-					<?php $headerImage[0] = get_bloginfo( 'stylesheet_directory' ) . '/images/reality-logo_326x326.png'; ?>
+					<?php $headerImage[0] = get_bloginfo( 'stylesheet_directory' ) . "/images/reality-logo_326x326.png"; ?>
 				
 					<div id="header-with-image" style="background-image:url(<?php echo $headerImage[0]; ?>);background-size: 326px 326px;">
 						<div class="aspect-control"></div>

@@ -44,7 +44,7 @@ function the_reality_theme_setup()
       2000  =>  array( 'rank_name' => 'Badass', 'rank_slug' => 'badass' ),
       5000  =>  array( 'rank_name' => 'Legend', 'rank_slug' => 'legend' ),
       10000 =>  array( 'rank_name' => 'Assistant to the Producer', 'rank_slug' => 'assistant-to-the-producer' ),
-      50000 =>  array( 'rank_name' => 'God', 'rank_slug' => 'god' )
+      50000 =>  array( 'rank_name' => 'Unicorn', 'rank_slug' => 'unicorn' )
     );
     $default_fourohfour = '<h1>Could not find this page!</h1>';
 

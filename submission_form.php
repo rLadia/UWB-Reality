@@ -96,7 +96,7 @@ get_header(); ?>
 						<?php endif; ?>
 						</div>
 						<div class="input-container">
-							<input type="text" name="maker_card_id" id="maker_card_id" placeholder="ex. 11008"<?php if ( $maker_card_id ) echo ' value="'.$maker_card_id.'" disabled'; ?>>
+							<input type="text" name="maker_card_id" id="maker_card_id" placeholder="ex. 233"<?php if ( $maker_card_id ) echo ' value="'.$maker_card_id.'" disabled'; ?>>
 						</div> 
 					</div>
 				  	<div id="deal-title">

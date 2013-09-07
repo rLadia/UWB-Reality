@@ -154,7 +154,7 @@ You never know. Keep watching, look for the eye, and carry your cards with you a
         'post_type'     =>  'page',
         'meta'          =>  array(
           '_wp_page_template'       =>  'submission_form.php',
-          'REALITY_success_message' =>  '<h2>You Have Successfully Submitted a Deal!</h2>'
+          'REALITY_success_message' =>  "<h2>Congratulations, you've successfully submitted a deal... almost. Come into the office and show us the proof.</h2>"
         )
       ),
       'login'         =>  array(

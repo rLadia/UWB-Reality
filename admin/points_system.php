@@ -61,6 +61,55 @@ function reality_activity_points( $activity ) {
 }
 add_action( 'bp_activity_after_save', 'reality_activity_points' );
 
+/**
+ * The user only receives points for the first two posts of the day 
+ */
+add_filter( 'reality_activity_points_modifier', 'restrict_posting_points', 1, 4);
+function restrict_posting_points( $user_id, $activity_value, $activity_id, $activity_type )
+{
+  $max_posts_per_day = 2;
+
+  $user_id = $user_id;
+  $key = 'daily_post_count';
+  $single = true;
+
+  $daily_post_count = get_user_meta($user_id, $key, $single);
+
+  // create the meta data for the user's first post
+  // *TODO* should this be added to the user creation step? 
+  if ( $daily_post_count == '' ) {
+    $values = [
+      'post_count'  => 0,
+      'expiry_date' => strtotime( 'tomorrow' ),
+    ];
+    add_user_meta( $user_id, $key, $values );
+    $daily_post_count = get_user_meta($user_id, $key, $single);
+  }
+
+  $num_posts = $daily_post_count['post_count'];
+
+  // a new day has passed, reset the daily post count
+  if ( time() > $daily_post_count['expiry_date'] ) {
+    $num_posts = 0;
+    $daily_post_count['expiry_date'] = strtotime('tomorrow');
+  }
+
+  // full points are awarded for the first two posts of the day
+  if ( $num_posts < $max_posts_per_day ) {
+    $num_posts ++;
+
+    $values = [
+      'post_count'  => $num_posts,
+      'expiry_date' => strtotime( 'tomorrow' ),
+    ];
+    update_user_meta($user_id, $key, $values);
+
+    return $activity_value;
+  }
+
+  return 0;
+}
+
 function reality_force_update_user_points( $user_id ) {
 
   $user_activities = array();

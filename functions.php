@@ -176,7 +176,7 @@ add_action( 'init', 'reality_enqueue_styles');
 
 function reality_add_default_avatar( $url )
 {
-  return 'https://students.washington.edu/qustom/reality-logo.png';
+  return get_stylesheet_directory_uri() . '/images/default-avatar.png'; 
 }
 add_filter( 'bp_core_mysteryman_src', 'reality_add_default_avatar' );
 

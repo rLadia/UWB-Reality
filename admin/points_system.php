@@ -39,7 +39,7 @@ function reality_activity_points( $activity ) {
     if ( isset( $activity_points_value[$activity->type] ) ) {
 
       $activity_value = $activity_points_value[$activity->type]['value'];
-      $activity_value = apply_filters( 'reality_activity_points_modifier', $activity_value, $activity->id, $activity->type );
+      $activity_value = apply_filters( 'reality_activity_points_modifier', $activity->user_id, $activity_value, $activity->id, $activity->type );
 
       bp_activity_update_meta( $activity->id, 'reality_activity_point_value', $activity_value );
 

@@ -82,7 +82,7 @@ add_filter( 'reality_deal_approval_activity_args', $deal_activity_args, 1, 1 );
 *** ADD DOCUMENTATION ***
 
 ------------------------------------------------------------------------------------------
-add_filter( 'reality_activity_points_modifier', $filter_function, 1, 1 );
+add_filter( 'reality_activity_points_modifier', $filter_function, 1, 3 );
 ------------------------------------------------------------------------------------------
 This filter modifies the point value of an activity when it is submitted to the database.
 

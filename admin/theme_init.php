@@ -44,7 +44,7 @@ function the_reality_theme_setup()
       2000  =>  array( 'rank_name' => 'Badass', 'rank_slug' => 'badass' ),
       5000  =>  array( 'rank_name' => 'Legend', 'rank_slug' => 'legend' ),
       10000 =>  array( 'rank_name' => 'Assistant to the Producer', 'rank_slug' => 'assistant-to-the-producer' ),
-      50000 =>  array( 'rank_name' => 'God', 'rank_slug' => 'god' )
+      50000 =>  array( 'rank_name' => 'Unicorn', 'rank_slug' => 'unicorn' )
     );
     $default_fourohfour = '<h1>Could not find this page!</h1>';
 
@@ -122,7 +122,7 @@ As big as you can make it. Surprise us.
 
 &nbsp;
 <h2>Can I work with other people?</h2>
-Absolutely. If two people work on a deal, two people get the points. If ten people work on a deal, ten people get the points. There is no spiti— you all get all of them. More people, more cards, more points for everyone. Get your friends involved, and work together to win it all.
+Absolutely. If two people work on a deal, two people get the points. If ten people work on a deal, ten people get the points. There is no split— you all get all of them. More people, more cards, more points for everyone. Get your friends involved, and work together to win it all.
 
 &nbsp;
 <h2>What do I get?</h2>
@@ -154,7 +154,7 @@ You never know. Keep watching, look for the eye, and carry your cards with you a
         'post_type'     =>  'page',
         'meta'          =>  array(
           '_wp_page_template'       =>  'submission_form.php',
-          'REALITY_success_message' =>  '<h2>You Have Successfully Submitted a Deal!</h2>'
+          'REALITY_success_message' =>  "<h2>Congratulations, you've successfully submitted a deal... almost. Come into the office and show us the proof.</h2>"
         )
       ),
       'login'         =>  array(

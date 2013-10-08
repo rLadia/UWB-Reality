@@ -487,7 +487,7 @@ $submission_meta_boxes[] = array(
 			'name'	=>	'Deal Submitted Successfully Content',
 			'id'	=>	"{$prefix}success_message",
 			'type' => 'wysiwyg',
-			'std'  => '<h2>You Have Successfully Submitted a Deal!</h2>',
+			'std'  => "<h2>Congratulations, you've successfully submitted a deal... almost. Come into the office and show us the proof.</h2>",
 
 			// Editor settings, see wp_editor() function: look4wp.com/wp_editor
 			'options' => array(

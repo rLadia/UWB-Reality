@@ -549,6 +549,33 @@ function reality_submit_deal() {
 }
 add_action( 'init', 'reality_submit_deal', 999 );
 
+// Remove references to user's real name and changes it to the login name
+function reality_change_default_name($user_id) {
+  $user_data = get_userdata( $user_id );
+
+  $display_name = $user_data->user_login;
+  $first_name = $user_data->user_login;
+  $last_name = ''; 
+
+  // removes the user's full name from the bp_xprofile_data table
+  // and replaces it with the display name
+  $bp_user = new BP_XProfile_ProfileData(1, $user_id);
+  $bp_user->value = $display_name;
+  $bp_user->save();
+
+  $args = array(
+    'ID' => $user_id,
+    'display_name'  => $display_name,
+    'first_name'    => $first_name, 
+    'last_name'     => $last_name,
+  );  
+
+  wp_update_user( $args );
+}
+
+add_action( 'user_register', 'reality_change_default_name');
+add_action( 'bp_core_signup_user', 'reality_change_default_name');
+
 function reality_user_redirect() {
 
   global $bp, $post;

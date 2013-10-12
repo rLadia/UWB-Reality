@@ -78,10 +78,10 @@ function restrict_posting_points( $user_id, $activity_value, $activity_id, $acti
   // create the meta data for the user's first post
   // *TODO* should this be added to the user creation step? 
   if ( $daily_post_count == '' ) {
-    $values = [
+    $values = array(
       'post_count'  => 0,
       'expiry_date' => strtotime( 'tomorrow' ),
-    ];
+    );
     add_user_meta( $user_id, $key, $values );
     $daily_post_count = get_user_meta($user_id, $key, $single);
   }
@@ -98,10 +98,10 @@ function restrict_posting_points( $user_id, $activity_value, $activity_id, $acti
   if ( $num_posts < $max_posts_per_day ) {
     $num_posts ++;
 
-    $values = [
+    $values = array(
       'post_count'  => $num_posts,
       'expiry_date' => strtotime( 'tomorrow' ),
-    ];
+    );
     update_user_meta($user_id, $key, $values);
 
     return $activity_value;

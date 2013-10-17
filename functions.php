@@ -996,12 +996,8 @@ function reality_get_player_comments_count( $user_id ) {
 
 function random_header_image()
 {
-	$dir = get_stylesheet_directory_uri()  . "/images/headers/";
-
-	// Because the otherone doesn't work well with the php function
-	$dir2 = getcwd() . "/wp-content/themes/USC-Reality---V-1.0/images/headers/";
-
-	$files =  opendir ($dir2);
+	$dir = get_stylesheet_directory() . "/images/headers/";
+	$files =  opendir ($dir);
 	
 	$images = array();
 
@@ -1013,16 +1009,11 @@ function random_header_image()
 		{
 			array_push($images, $filename);
 		}
-		
 	}
 	
-	
 	$size = count( $images );
-
 	$index = rand( 0, $size - 1);
-	
-	$path = $dir  . $images[$index];
-	
+	$path = get_stylesheet_directory_uri() . "/images/headers/" . $images[$index];
 	return $path;
 }
 
